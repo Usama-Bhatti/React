@@ -1,0 +1,30 @@
+name: Build DockerImage
+
+on:
+  push:
+     branches:
+       - main
+
+  pull_request:
+      branches:
+        - '*'
+
+
+jobs:
+  build:
+     runs-on: ubuntu-latest
+   
+     steps:
+      - name:  Check out code 
+        uses: actions/checkout@v3
+
+      - name: Setup Node JS
+        uses: actions/setup-nodejs@v3
+        with:
+         nodejs-version: '16'
+
+      - name: Install dependencies
+        run:  npm install
+
+
+
