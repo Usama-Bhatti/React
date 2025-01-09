@@ -28,6 +28,12 @@ jobs:
        
       - name: Build Project Assets
         run:  npm run build    
+      
+      - name: Upload an Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+         name: My-Artifact
+         path: ./
 
 
 
